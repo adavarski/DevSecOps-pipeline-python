@@ -188,6 +188,46 @@ jenkins@36407a340a57:/$ - Nikto v2.1.5
 ---------------------------------------------------------------------------
 + 1 host(s) tested
 
+$ docker logs selenium-chrome
+2021-03-01 11:43:37,715 INFO Included extra file "/etc/supervisor/conf.d/selenium.conf" during parsing
+2021-03-01 11:43:37,717 INFO supervisord started with pid 7
+2021-03-01 11:43:38,720 INFO spawned: 'xvfb' with pid 9
+2021-03-01 11:43:38,722 INFO spawned: 'selenium-standalone' with pid 10
+11:43:38.952 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
+2021-03-01 11:43:38,953 INFO success: xvfb entered RUNNING state, process has stayed up for > than 0 seconds (startsecs)
+2021-03-01 11:43:38,953 INFO success: selenium-standalone entered RUNNING state, process has stayed up for > than 0 seconds (startsecs)
+11:43:39.089 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+2021-03-01 11:43:39.136:INFO::main: Logging initialized @381ms to org.seleniumhq.jetty9.util.log.StdErrLog
+11:43:39.428 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+11:43:39.518 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+11:51:08.796 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "version": ""
+}
+11:51:08.797 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+Starting ChromeDriver 88.0.4324.96 (68dba2d8a0b149a1d3afac56fa74648032bcf46b-refs/branch-heads/4324@{#1784}) on port 1088
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[161459946C8h.r8o2m8e]D[rSiEvVeErR Ew]a:s  bsitnadr(t)e df asiulcecde:s sCfaunlnloyt. 
+assign requested address (99)
+11:51:11.227 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+11:51:11.257 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 070b5328c3f2e5280fc169f47bf69fe1 (org.openqa.selenium.chrome.ChromeDriverService)
+11:55:33.205 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "version": ""
+}
+11:55:33.205 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+Starting ChromeDriver 88.0.4324.96 (68dba2d8a0b149a1d3afac56fa74648032bcf46b-refs/branch-heads/4324@{#1784}) on port 24136
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1614599733.212][SEVERE]: bind() fCailed: Cannot assign requested address (99)
+hromeDriver was started successfully.
+11:55:34.028 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+11:55:34.029 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 33a0e398f65136597a0a9247eb97c9af (org.openqa.selenium.chrome.ChromeDriverService)
+12:21:14.536 INFO [ActiveSessions$1.onStop] - Removing session 070b5328c3f2e5280fc169f47bf69fe1 (org.openqa.selenium.chrome.ChromeDriverService)
+12:25:39.638 INFO [ActiveSessions$1.onStop] - Removing session 33a0e398f65136597a0a9247eb97c9af (org.openqa.selenium.chrome.ChromeDriverService)
+
+
 ```
 ### Reports
 
