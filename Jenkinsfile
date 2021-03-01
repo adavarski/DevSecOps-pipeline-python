@@ -24,8 +24,8 @@ pipeline {
 */
 
 parameters { 
-(name: 'aws_access_key_id', defaultValue: '', , description: 'Please enter the aws_access_key_id', credentialType: "string", required: true ) 
-(name: 'aws_secret_access_key', defaultValue: '', description: 'Please enter the aws_secret_access_key', credentialType: "string", required: true ) 
+string(name: 'aws_access_key_id', defaultValue: '', , description: 'Please enter the aws_access_key_id', required: true ) 
+string(name: 'aws_secret_access_key', defaultValue: '', description: 'Please enter the aws_secret_access_key', required: true ) 
  }
 	
     stages {   
