@@ -14,6 +14,13 @@ testenv = "null"
 pipeline {
     /* Which agent are we running this pipeline on? We can configure different OS */
     agent any
+    
+  parameters{
+    string(name: 'aws_access_key_id', description: 'Please enter the aws_access_key_id' )
+    string(name: 'aws_secret_access_key', description: 'Please enter the aws_secret_access_key' )
+
+  }
+  
 	
     stages {   
         
@@ -94,8 +101,8 @@ pipeline {
               mkdir  ~/.aws/ || true
               rm  ~/.aws/credentials || true
               echo "[default]" >> ~/.aws/credentials
-              echo "aws_access_key_id = XXXXXXX" >> ~/.aws/credentials
-              echo "aws_secret_access_key = YYYYYY" >> ~/.aws/credentials
+              echo "aws_access_key_id = $aws_access_key_id" >> ~/.aws/credentials
+              echo "aws_secret_access_key = $aws_secret_access_key" >> ~/.aws/credentials
               ansible-playbook -i ~/ansible_hosts ~/createAwsEc2.yml
               """		  
 	      script{
