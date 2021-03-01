@@ -23,15 +23,15 @@ Features:
 
 > **git secret check** - check there is no password/token/keys/secrets accidently commited to project github (trufflehog)
 
-> **SCA** - check external dependencies/libraries used by the project have no known vulnerabilities
+> **SCA** - check external dependencies/libraries used by the project have no known vulnerabilities (safety)
 
 > **SAST** - static analysis of the application source code for exploits, bugs, vulnerabilites (Bandit)
 
-> **Container audit** - audit the container that is used to deploy the python application
+> **Container audit** - audit the container that is used to deploy the python application (Lynis)
 
 > **DAST** - deploy the application, register, login, attack & analyse it from the frontend as authenticated user (Nikto)
 
-> **System security audit** - analyse at the security posture of the system hosting the application
+> **System security audit** - analyse at the security posture of the system hosting the application (Lynis)
 
 > **WAF** - deploy application with WAF which will filter malicious requests according to OWASP core ruleset
 
