@@ -68,6 +68,13 @@ Edit [Jenkinsfile](https://github.com/adavarski/DevSecOps-pipeline-python/blob/m
 ```
 Edit [setup-ubuntu.sh](https://github.com/adavarski/DevSecOps-pipeline-python/blob/main/setup-ubuntu.sh): uncomment lines
 ```
+#apt-get update
+#apt install docker.io -y
+#apt-get install -y docker-compose
+#apt install default-jre -y
+#usermod -aG docker ubuntu
+#newgrp docker
+#systemctl enable docker
 #export JenkinsPublicHostname=$(curl -s http://169.254.169.254/latest/meta-data/public-hostname)
 #export SeleniumPrivateIp=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)
 ```
