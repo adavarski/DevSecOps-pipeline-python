@@ -25,7 +25,23 @@ pipeline {
 
 
     stages {   
-        
+       
+    stage('Check AWS credentials') 
+     {
+        steps
+        {
+            script 
+            {
+                if (params.aws_access_key_id == '' or params.aws_secret_access_key == '') { // and/or whatever condition you want
+                    currentBuild.result = 'ABORTED'
+                    error('Please enter AWS credentials!')
+                }
+            }
+        }
+    }    
+	    
+	    
+      	    
       stage('Checkout project'){
         steps {
           echo 'downloading git python app ...'
