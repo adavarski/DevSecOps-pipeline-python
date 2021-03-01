@@ -16,19 +16,20 @@ Features:
 - [x] Carry out authenticated DAST scan on the python web app 
 
 
+
 *Disclaimer: This project is for demonstration purpose with surface level checks only, do not use it as-is for production*
 
 > **Checkout project** - check out python application project repository with XSS vulnerability
 
-> **git secret check** - check there is no password/token/keys/secrets accidently commited to project github
+> **git secret check** - check there is no password/token/keys/secrets accidently commited to project github (trufflehog)
 
 > **SCA** - check external dependencies/libraries used by the project have no known vulnerabilities
 
-> **SAST** - static analysis of the application source code for exploits, bugs, vulnerabilites
+> **SAST** - static analysis of the application source code for exploits, bugs, vulnerabilites (Bandit)
 
 > **Container audit** - audit the container that is used to deploy the python application
 
-> **DAST** - deploy the application, register, login, attack & analyse it from the frontend as authenticated user
+> **DAST** - deploy the application, register, login, attack & analyse it from the frontend as authenticated user (Nikto)
 
 > **System security audit** - analyse at the security posture of the system hosting the application
 
