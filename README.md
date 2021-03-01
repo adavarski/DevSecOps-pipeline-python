@@ -19,7 +19,7 @@ Features:
 
 *Disclaimer: This project is for demonstration purpose with surface level checks only, do not use it as-is for production*
 
-> **Checkout project** - check out python application project repository with XSS vulnerability
+> **Checkout project** - check out python application project repository with XSS vulnerability (https://github.com/adavarski/Python-app-DevSecOps-XSS)
 
 > **git secret check** - check there is no password/token/keys/secrets accidently commited to project github (trufflehog)
 
