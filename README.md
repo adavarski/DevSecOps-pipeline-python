@@ -1,8 +1,10 @@
 # DevSecOps pipeline for Python project
 
-A Jenkins end-to-end DevSecOps pipeline for Python web application, hosted on AWS EC2 (Ubuntu 18.04).
+A Jenkins end-to-end DevSecOps pipeline for Python web application.
 
 <img src="https://github.com/adavarski/DevSecOps-pipeline-python/blob/main/pictures/DevSecOps-pipeline-full.png" width="900">
+
+Jenkins instance/environment hosted on AWS EC2 (Ubuntu 18.04) or local environment (laptop/on-prem ubuntu server).
 
 Features:
 
@@ -74,10 +76,13 @@ https://localhost:8080
 ```
 
 5. Use the temporary credentials provided on the logs to login. Change your password!
-6. Go to the python pipeline project dashboard, click on "Build Now" button to start it off (if your repo is private and AWS credentials are pre-configured in repo Jenkinsfile)
-7. Setting up a Jenkins Pipeline project manually ("Pipeline script" option) using Jenkinsfile, Jenkinsfile.example1 or Jenkinsfile.example2 
-8. Configure AWS credentials for J.pipeline (aws_access_key_id & aws_secret_access_key) and click on "Build Now" button to start off the pipeline
+6. Go to the python pipeline project dashboard, click on "Build Now" button to start it off -> "Build with parameters"-> Enter AWS credentials (aws_access_key_id & aws_secret_access_key)
 
+
+8. Setting up a Jenkins Pipeline project manually ("Pipeline script" option) using Jenkinsfile, Jenkinsfile.example1 or Jenkinsfile.example2 
+9. Configure AWS credentials for J.pipeline (aws_access_key_id & aws_secret_access_key) and click on "Build Now" button to start off the pipeline
+
+## Setting up a Jenkins Pipeline project manually
  
 **A sample pipeline is already provided through automation**
 
