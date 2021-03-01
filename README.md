@@ -160,7 +160,7 @@ added cookie to nikto config file to carry out authenticated scan..
 
 # Debugging
 $ docker exec -it jenkins-master bash
-jenkins@36407a340a57:/$ python3 /var/jenkins_home/authDAST.py selenium-chrome 18.130.68.209 /var/jenkins_home/workspace/DevSecOps-pipeline-python/jenkins-DevSecOps-pipeline-python-2/DAST_results.html
+jenkins@36407a340a57:/$ python3 /var/jenkins_home/authDAST.py selenium-chrome 18.130.68.209 /var/jenkins_home/workspace/DevSecOps-pipeline-python/jenkins-DevSecOps-pipeline-python-3/DAST_results.html
 we're at: http://18.130.68.209:10007/register
 creating a user..
 created user
