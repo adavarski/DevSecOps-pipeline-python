@@ -2,9 +2,8 @@
 
 A Jenkins end-to-end DevSecOps pipeline for Python web application, hosted on AWS Ubuntu 18.04
 
-![pipeline]()
+<img src="https://github.com/adavarski/DevSecOps-pipeline-python/blob/main/pictures/DevSecOps-pipeline-full.png" width="900">
 
-<img alt="architecture" src="">
 
 *Disclaimer: This project is for demonstration purpose with surface level checks only, do not use it as-is for production*
 
@@ -80,13 +79,12 @@ https://localhost:8080
 
 ## Demo
 
-![finalgif4](https://.gif)
+<img src="https://github.com/adavarski/DevSecOps-pipeline-python/blob/main/pictures/DevSecOps-pipeline-steps-UI.png" width="900">
+
+<img src="https://github.com/adavarski/DevSecOps-pipeline-python/blob/main/pictures/DevSecOps-ec2.png" width="900">
 
 ### Report
 
-![workspace](https://.JPG)
+<img src="https://github.com/adavarski/DevSecOps-pipeline-python/blob/main/pictures/DevSecOps-workspace.png" width="900">
 
-## Authors
-
-* **A.Davarski** - [adavarski](https://github.com/adavarski)
 
