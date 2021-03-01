@@ -120,6 +120,75 @@ https://localhost:8080
 
 <img src="https://github.com/adavarski/DevSecOps-pipeline-python/blob/main/pictures/DevSecOps-ec2.png" width="900">
 
+Debugging:
+```
+#J.pipeline console output (autoDAST missing html report)
+
+[Pipeline] sh
++ python3 /var/jenkins_home/authDAST.py selenium-chrome 18.130.68.209 /var/jenkins_home/workspace/DevSecOps-pipeline-python/jenkins-DevSecOps-pipeline-python-2/DAST_results.html
+we're at: http://18.130.68.209:10007/register
+creating a user..
+created user
+we're at: http://18.130.68.209:10007/login
+logged in successfully.. getting cookie
+added cookie to nikto config file to carry out authenticated scan..
+- Nikto v2.1.5
+---------------------------------------------------------------------------
+[Pipeline] }
+
+Shoud be:
+
+[Pipeline] sh
++ python3 /var/jenkins_home/authDAST.py selenium-chrome 18.134.137.141 /var/jenkins_home/workspace/devSecops/jenkins-devSecops-40/DAST_results.html
+we're at: http://18.134.137.141:10007/register
+creating a user..
+created user
+we're at: http://18.134.137.141:10007/login
+logged in successfully.. getting cookie
+added cookie to nikto config file to carry out authenticated scan..
+- Nikto v2.1.5
+---------------------------------------------------------------------------
++ Target IP:          18.134.137.141
++ Target Hostname:    ec2-18-134-137-141.eu-west-2.compute.amazonaws.com
++ Target Port:        10007
++ Start Time:         2021-02-28 13:01:34 (GMT0)
+---------------------------------------------------------------------------
++ Server: Werkzeug/0.14.1 Python/3.9.2
++ The anti-clickjacking X-Frame-Options header is not present.
++ Cookie session created without the httponly flag
+[Pipeline] }
+
+# Debugging
+$ docker exec -it jenkins-master bash
+jenkins@36407a340a57:/$ python3 /var/jenkins_home/authDAST.py selenium-chrome 18.130.68.209 /var/jenkins_home/workspace/DevSecOps-pipeline-python/jenkins-DevSecOps-pipeline-python-2/DAST_results.html
+we're at: http://18.130.68.209:10007/register
+creating a user..
+created user
+we're at: http://18.130.68.209:10007/login
+logged in successfully.. getting cookie
+added cookie to nikto config file to carry out authenticated scan..
+jenkins@36407a340a57:/$ - Nikto v2.1.5
+---------------------------------------------------------------------------
++ Target IP:          18.130.68.209
++ Target Hostname:    ec2-18-130-68-209.eu-west-2.compute.amazonaws.com
++ Target Port:        10007
++ Start Time:         2021-03-01 11:55:36 (GMT0)
+---------------------------------------------------------------------------
++ Server: Werkzeug/0.14.1 Python/3.9.2
++ The anti-clickjacking X-Frame-Options header is not present.
++ Cookie session created without the httponly flag
++ No CGI Directories found (use '-C all' to force check all possible dirs)
++ OSVDB-630: IIS may reveal its internal or real IP in the Location header via a request to the /images directory. The value is "http://0.0.0.0:10007/login".
++ OSVDB-28260: /gossip/_vti_bin/shtml.dll/_vti_rpc?method=server+version%3a4%2e0%2e2%2e2611: Gives info about server settings. CVE-2000-0413, CVE-2000-0709, CVE-2000-0710, http://www.securityfocus.com/bid/1608, http://www.securityfocus.com/bid/1174.
++ OSVDB-28260: /gossip/_vti_bin/shtml.exe/_vti_rpc?method=server+version%3a4%2e0%2e2%2e2611: Gives info about server settings.
++ OSVDB-3092: /gossip/_vti_bin/_vti_aut/author.dll?method=list+documents%3a3%2e0%2e2%2e1706&service%5fname=&listHiddenDocs=true&listExplorerDocs=true&listRecurse=false&listFiles=true&listFolders=true&listLinkInfo=true&listIncludeParent=true&listDerivedT=false&listBorders=fals: We seem to have authoring access to the FrontPage web.
++ OSVDB-3092: /gossip/_vti_bin/_vti_aut/author.exe?method=list+documents%3a3%2e0%2e2%2e1706&service%5fname=&listHiddenDocs=true&listExplorerDocs=true&listRecurse=false&listFiles=true&listFolders=true&listLinkInfo=true&listIncludeParent=true&listDerivedT=false&listBorders=fals: We seem to have authoring access to the FrontPage web.
++ 6544 items checked: 0 error(s) and 7 item(s) reported on remote host
++ End Time:           2021-03-01 12:05:56 (GMT0) (620 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+
+```
 ### Reports
 
 <img src="https://github.com/adavarski/DevSecOps-pipeline-python/blob/main/pictures/DevSecOps-workspace.png" width="500">
