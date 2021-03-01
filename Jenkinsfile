@@ -94,8 +94,8 @@ pipeline {
               mkdir  ~/.aws/ || true
               rm  ~/.aws/credentials || true
               echo "[default]" >> ~/.aws/credentials
-              echo "aws_access_key_id = AKIXXXXXXX" >> ~/.aws/credentials
-              echo "aws_secret_access_key = Uq5YXXXXXXXX" >> ~/.aws/credentials
+              echo "aws_access_key_id = XXXXXXX" >> ~/.aws/credentials
+              echo "aws_secret_access_key = YYYYYY" >> ~/.aws/credentials
               ansible-playbook -i ~/ansible_hosts ~/createAwsEc2.yml
               """		  
 	      script{
