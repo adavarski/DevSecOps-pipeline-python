@@ -29,7 +29,7 @@ Features:
 
 > **Container audit** - audit the container that is used to deploy the python application (Lynis)
 
-> **DAST** - deploy the application, register, login, attack & analyse it from the frontend as authenticated user (Nikto + Selenium + python custom script)
+> **DAST** - deploy the application, register, login, attack & analyse it from the frontend as authenticated user (Nikto + Selenium + python custom script for DAST automation)
 
 > **System security audit** - analyse at the security posture of the system hosting the application (Lynis)
 
