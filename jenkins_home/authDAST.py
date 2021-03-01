@@ -12,8 +12,8 @@ def randomString(stringLength):
     return ''.join(random.choice(letters) for i in range(stringLength))
 
 def bash_command(cmd):
-    #subprocess.Popen(cmd, shell=True, executable='/bin/bash')
-    subprocess.Popen(['/bin/bash', '-c', cmd])
+    subprocess.Popen(cmd, shell=True, executable='/bin/bash')
+    #subprocess.Popen(['/bin/bash', '-c', cmd])
 
 
 myusername = randomString(8)
