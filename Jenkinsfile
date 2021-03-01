@@ -19,9 +19,9 @@ pipeline {
         
       stage('Checkout project'){
         steps {
-          echo 'downloading git directory..'
-          sh 'rm -rf /var/jenkins_home/workspace/DevSecOps-pipeline-python/Python-app-DevSecOps-XSS'
-	      sh 'git clone https://github.com/adavarski/Python-app-DevSecOps-XSS'
+          echo 'downloading git python app ...'
+          checkout([$class: 'GitSCM', branches: [[name: '*/main']],
+    userRemoteConfigs: [[url: 'https://github.com/adavarski/Python-app-DevSecOps-XSS.git']]])
         }
       }       
     
@@ -36,7 +36,7 @@ pipeline {
       stage('SCA'){
         steps{
           echo 'running python safety check on requirements.txt file'
-          sh 'safety check -r $WORKSPACE/Python-app-DevSecOps-XSS/gossip-world/app/requirements.txt|| true'
+          sh 'safety check -r $WORKSPACE/gossip-world/app/requirements.txt|| true'
           /*
 	  echo 'running liccheck on dependencies'
 	  sh """
@@ -52,7 +52,7 @@ pipeline {
       stage('SAST') {
           steps {
               echo 'Testing source code for security bugs and vulnerabilities'
-	      sh 'bandit -r $WORKSPACE/Python-app-DevSecOps-XSS/gossip-world/app/ -ll || true'
+	      sh 'bandit -r $WORKSPACE/gossip-world/app/ -ll || true'
           }
       }
       stage('Container audit') {
@@ -73,7 +73,7 @@ pipeline {
 		  dir("/var/jenkins_home/lynis"){  
 			sh """
 			mkdir $WORKSPACE/$BUILD_TAG/
-			./lynis audit dockerfile $WORKSPACE/Python-app-DevSecOps-XSS/gossip-world/deployments/Dockerfile | ansi2html > $WORKSPACE/$BUILD_TAG/docker-report.html
+			./lynis audit dockerfile $WORKSPACE/gossip-world/deployments/Dockerfile | ansi2html > $WORKSPACE/$BUILD_TAG/docker-report.html
 			mv /tmp/lynis.log $WORKSPACE/$BUILD_TAG/docker_lynis.log
 			mv /tmp/lynis-report.dat $WORKSPACE/$BUILD_TAG/docker_lynis-report.dat
 			"""
@@ -88,14 +88,14 @@ pipeline {
 	      echo "localhost ansible_connection=local" >> ~/ansible_hosts
 	      echo "[tstlaunched]" >> ~/ansible_hosts
 	      
-	      tar cvfz /var/jenkins_home/pythonapp.tar.gz -C $WORKSPACE/Python-app-DevSecOps-XSS/ .
+	      tar cvfz /var/jenkins_home/pythonapp.tar.gz -C $WORKSPACE/ .
 	      
               ssh-keygen -t rsa -N "" -f ~/.ssh/devsecops || true
               mkdir  ~/.aws/ || true
               rm  ~/.aws/credentials || true
               echo "[default]" >> ~/.aws/credentials
-              echo "aws_access_key_id = XXXXXXXX" >> ~/.aws/credentials
-              echo "aws_secret_access_key = YYYYYYYY" >> ~/.aws/credentials
+              echo "aws_access_key_id = AKIXXXXXXX" >> ~/.aws/credentials
+              echo "aws_secret_access_key = Uq5YXXXXXXXX" >> ~/.aws/credentials
               ansible-playbook -i ~/ansible_hosts ~/createAwsEc2.yml
               """		  
 	      script{
@@ -145,12 +145,7 @@ pipeline {
 	  }
       }	
 
-      stage('Delete Python app repo') {
-          steps {
-              echo 'Delete Python app repo: Python-app-DevSecOps-XSS'
-              sh 'rm -rf /var/jenkins_home/workspace/DevSecOps-pipeline-python/Python-app-DevSecOps-XSS'
-          }
-      }     
+
     
     }
     post {
