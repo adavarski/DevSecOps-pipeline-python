@@ -56,7 +56,6 @@ git clone https://github.com/adavarski/DevSecOps-pipeline-python
 - Using jenkins local (your laptop) environment:
 ```
 cd DevSecOps-pipeline-python
-chmod 755 setup-ubuntu.sh
 ./setup-ubuntu.sh
 ```
 
