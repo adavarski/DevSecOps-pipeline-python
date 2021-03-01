@@ -22,7 +22,7 @@
    - name: Unzip it
      unarchive: 
        src: /home/ubuntu/pythonapp.tar.gz
-       dest: /home/ubuntu/
+       dest: /home/ubuntu/gossip-world/
        copy: no
    - name: Run the application with docker
      shell: make install
