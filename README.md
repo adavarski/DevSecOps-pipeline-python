@@ -4,7 +4,7 @@ A Jenkins end-to-end DevSecOps pipeline for Python web application.
 
 <img src="https://github.com/adavarski/DevSecOps-pipeline-python/blob/main/pictures/DevSecOps-pipeline-full.png" width="900">
 
-Jenkins instance/environment hosted on AWS EC2 (Ubuntu 18.04) or local environment (laptop/on-prem ubuntu server).
+Jenkins instance/environment hosted on AWS EC2 (Ubuntu 18.04) or local environment (on your laptop/workstation/on-prem ubuntu server).
 
 Features:
 
@@ -53,13 +53,13 @@ git clone https://github.com/adavarski/DevSecOps-pipeline-python
 
 Uncomment all needed lines @setup-ubuntu.sh
 
-If using jenkins local (your laptop) environment
+If using jenkins local (your laptop) environment:
 ```
 cd DevSecOps-pipeline-python
 ./setup-ubuntu.sh
 ```
 
-If using AWS EC2 jenkins environment.
+If using AWS EC2 jenkins environment:
 ```
 cd DevSecOps-pipeline-python
 sudo sh setup-ubuntu.sh 
