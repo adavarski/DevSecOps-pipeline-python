@@ -109,7 +109,7 @@ pipeline {
 	      echo "localhost ansible_connection=local" >> ~/ansible_hosts
 	      echo "[tstlaunched]" >> ~/ansible_hosts
 	      
-	      tar cvfz /var/jenkins_home/pythonapp.tar.gz -C $WORKSPACE/ .
+	      tar cvfz /var/jenkins_home/pythonapp.tar.gz -C $WORKSPACE/gossip-world .
 	      
               ssh-keygen -t rsa -N "" -f ~/.ssh/devsecops || true
               mkdir  ~/.aws/ || true
