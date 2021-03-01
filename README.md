@@ -120,9 +120,9 @@ https://localhost:8080
 
 <img src="https://github.com/adavarski/DevSecOps-pipeline-python/blob/main/pictures/DevSecOps-ec2.png" width="900">
 
-Debugging:
+Debugging (authDAST.py missing html report):
 ```
-#J.pipeline console output (autoDAST missing html report)
+#J.pipeline console output 
 
 [Pipeline] sh
 + python3 /var/jenkins_home/authDAST.py selenium-chrome 18.130.68.209 /var/jenkins_home/workspace/DevSecOps-pipeline-python/jenkins-DevSecOps-pipeline-python-2/DAST_results.html
