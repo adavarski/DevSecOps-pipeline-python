@@ -51,7 +51,7 @@ git clone https://github.com/adavarski/DevSecOps-pipeline-python
 
 3. Run the setup script to create CI/CD server with Jenkins+pipeline ready to go
 
-   Uncomment all needed lines @setup-ubuntu.sh & @Jenkinsfile for local environment||AWS EC2 jenkins environment:
+   Uncomment all needed lines @setup-ubuntu.sh & @Jenkinsfile for local or AWS EC2 jenkins environment:
 
 - Using jenkins local (your laptop) environment:
 ```
