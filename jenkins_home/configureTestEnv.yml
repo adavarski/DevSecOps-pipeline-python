@@ -19,6 +19,10 @@
      copy: 
        src: pythonapp.tar.gz 
        dest: /home/ubuntu/pythonapp.tar.gz
+   - name: Create directory for unarchiving app
+     file:
+       path: /opt/apache_exporter
+       state: directory
    - name: Unzip it
      unarchive: 
        src: /home/ubuntu/pythonapp.tar.gz
