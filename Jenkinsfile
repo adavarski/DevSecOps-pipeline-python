@@ -26,12 +26,9 @@ pipeline {
 
     stages {   
        
-    stage('Check AWS credentials') 
-     {
-        steps
-        {
-            script 
-            {
+      stage('Check AWS credentials'){
+        steps{
+            script{
                 if (params.aws_access_key_id == '' || params.aws_secret_access_key == '') { // and/or whatever condition you want
                     currentBuild.result = 'ABORTED'
                     error('Please enter AWS credentials!')
@@ -39,8 +36,7 @@ pipeline {
             }
         }
     }    
-	    
-	    
+ 
       	    
       stage('Checkout project'){
         steps {
