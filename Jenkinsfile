@@ -32,7 +32,7 @@ pipeline {
         {
             script 
             {
-                if (params.aws_access_key_id == '' or params.aws_secret_access_key == '') { // and/or whatever condition you want
+                if (params.aws_access_key_id == '' || params.aws_secret_access_key == '') { // and/or whatever condition you want
                     currentBuild.result = 'ABORTED'
                     error('Please enter AWS credentials!')
                 }
