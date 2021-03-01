@@ -99,7 +99,7 @@ https://localhost:8080
 
 <img src="https://github.com/adavarski/DevSecOps-pipeline-python/blob/main/pictures/DevSecOps-ec2.png" width="900">
 
-### Report
+### Reports
 
 <img src="https://github.com/adavarski/DevSecOps-pipeline-python/blob/main/pictures/DevSecOps-workspace.png" width="500">
 
