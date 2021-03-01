@@ -101,6 +101,6 @@ https://localhost:8080
 
 ### Report
 
-<img src="https://github.com/adavarski/DevSecOps-pipeline-python/blob/main/pictures/DevSecOps-workspace.png" width="900">
+<img src="https://github.com/adavarski/DevSecOps-pipeline-python/blob/main/pictures/DevSecOps-workspace.png" width="500">
 
 
