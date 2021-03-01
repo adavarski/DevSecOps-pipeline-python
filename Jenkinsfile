@@ -16,7 +16,7 @@ pipeline {
     agent any
     
   parameters{
-    string(name: 'aws_access_key_id', description: 'Please enter the aws_access_key_id'. required: true )
+    string(name: 'aws_access_key_id', description: 'Please enter the aws_access_key_id', required: true )
     string(name: 'aws_secret_access_key', description: 'Please enter the aws_secret_access_key', required: true )
 
   }
