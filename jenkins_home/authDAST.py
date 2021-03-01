@@ -69,4 +69,4 @@ for cookie in cookies_list:
 bash_command("cp /etc/nikto/config.txt ~/nikto-config.txt")
 bash_command("echo '" + nikto_string +"' >> ~/nikto-config.txt")
 print("added cookie to nikto config file to carry out authenticated scan..")
-bash_command("nikto -ask no -config ~/nikto-config.txt -Format html -h http://"+sys.argv[2]+":10007/gossip -output "+ sys.argv[3])
+bash_command("nikto -ask no -config ~/nikto-config.txt -Format html -h http://"+sys.argv[3]+":10007/gossip -output "+ sys.argv[4])
