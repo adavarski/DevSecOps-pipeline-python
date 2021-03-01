@@ -47,7 +47,7 @@ git clone https://github.com/adavarski/DevSecOps-pipeline-python
    - Change to your AWS subnet [vpc_subnet_id](jenkins_home/createAwsEc2.yml#L30) 
    - Change to your AWS [security_group](jenkins_home/createAwsEc2.yml#L10) (allow inbound ssh(22), WAF(80), *Optional* web-app(10007) from your IP ONLY)
    - AWS IAM: Create account, give full-ec2-access to this account. Create AWS Access keys for this account and get access key ID and secret access key.
-   - (optional: if we use AWS EC2 to host jenkins): Create an IAM role which gives full-ec2-access and assign it to your ubuntu server (AWS EC2 jenkins instance)
+   - (optional: if you use AWS EC2 to host jenkins instance): Create an IAM role which gives full-ec2-access and assign it to your ubuntu server (AWS EC2 jenkins instance)
 
 3. Run the setup script to create CI/CD server with Jenkins+pipeline ready to go
 
