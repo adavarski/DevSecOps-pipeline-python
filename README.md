@@ -79,9 +79,6 @@ https://localhost:8080
 6. Go to the python pipeline project dashboard, click on "Build Now" button to start it off -> "Build with parameters"-> Enter AWS credentials (aws_access_key_id & aws_secret_access_key)
 
 
-8. Setting up a Jenkins Pipeline project manually ("Pipeline script" option) using Jenkinsfile, Jenkinsfile.example1 or Jenkinsfile.example2 
-9. Configure AWS credentials for J.pipeline (aws_access_key_id & aws_secret_access_key) and click on "Build Now" button to start off the pipeline
-
 ## Setting up a Jenkins Pipeline project manually
  
 **A sample pipeline is already provided through automation**
@@ -90,7 +87,7 @@ https://localhost:8080
 2. Scroll down to Pipeline section - Definition, select "Pipeline script from SCM" from drop down menu.
 3. Select Git under SCM, and input Repository URL.
 4. (Optional) Create and Add your credentials for the Git repo if your repo is private, and click Save.
-5. You will be brought to the Dashboard of your Pipeline project, click on "Build Now" button to start off the pipeline.
+5. You will be brought to the Dashboard of your Pipeline project, click on "Build Now" button to start off the pipeline-> -> "Build with parameters"-> Enter AWS credentials (aws_access_key_id & aws_secret_access_key)
 
 
 **To do list:**
