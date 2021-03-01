@@ -14,20 +14,16 @@ testenv = "null"
 pipeline {
     /* Which agent are we running this pipeline on? We can configure different OS */
     agent any
-/*
+
   
  parameters{
-   string(name: 'aws_access_key_id', description: 'Please enter the aws_access_key_id', required: true )
-   string(name: 'aws_secret_access_key', description: 'Please enter the aws_secret_access_key', required: true )
+   string(name: 'aws_access_key_id', defaultValue: '', description: 'Please enter the aws_access_key_id')
+   string(name: 'aws_secret_access_key', defaultValue: '', description: 'Please enter the aws_secret_access_key' )
 
  }
-*/
 
-parameters { 
-string(name: 'aws_access_key_id', defaultValue: '', , description: 'Please enter the aws_access_key_id', required: true ) 
-string(name: 'aws_secret_access_key', defaultValue: '', description: 'Please enter the aws_secret_access_key', required: true ) 
- }
-	
+
+
     stages {   
         
       stage('Checkout project'){
