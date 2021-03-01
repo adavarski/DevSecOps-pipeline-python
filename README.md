@@ -53,16 +53,28 @@ git clone https://github.com/adavarski/DevSecOps-pipeline-python
 
 Uncomment all needed lines @setup-ubuntu.sh
 
-If using jenkins local (your laptop) environment:
+- Using jenkins local (your laptop) environment:
 ```
 cd DevSecOps-pipeline-python
 ./setup-ubuntu.sh
 ```
 
-If using AWS EC2 jenkins environment:
+- Using AWS EC2 jenkins environment:
 ```
 cd DevSecOps-pipeline-python
 sudo sh setup-ubuntu.sh 
+```
+For jenkins instance on AWS EC2 
+
+setup-ubuntu.sh: uncomment
+```
+#export JenkinsPublicHostname=$(curl -s http://169.254.169.254/latest/meta-data/public-hostname)
+#export SeleniumPrivateIp=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)
+```
+Jenkinsfile (this repo): uncomment 
+```			
+// def seleniumIp = env.SeleniumPrivateIp
+// sh "python3 ~/authDAST.py $seleniumIp ${testenv} $WORKSPACE/$BUILD_TAG/DAST_results.html"
 ```
 
 4. Make sure your firewall allows incoming traffic to port 8080 (if using AWS EC2 to host jenkins). Then, go to your jenkins server URL 
