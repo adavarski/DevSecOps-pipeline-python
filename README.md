@@ -35,6 +35,20 @@ Features:
 
 > **WAF** - deploy application with WAF which will filter malicious requests according to OWASP core ruleset (owasp/modsecurity-crs)
 
+Toolchain summary:
+
+- CICD - Jenkins
+- Orchestration - Ansible Playbook
+- SCM - Github
+- Secret check - trufflehog
+- SCA - safety
+- SAST - bandit
+- Container Audit - lynis
+- DAST - nikto for scans, selenium-chrome for grabbing session cookie
+- Security Audit - lynis
+- WAF - modsecurity, also configured as reverse proxy
+- Environment - AWS/local
+
 
 ## Installation steps
 
