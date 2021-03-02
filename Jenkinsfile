@@ -146,6 +146,7 @@ pipeline {
 			// def seleniumIp = env.SeleniumPrivateIp
 			if("${testenv}" != "null"){
 				sh "python3 ~/authDAST.py selenium-chrome ${testenv} $WORKSPACE/$BUILD_TAG/DAST_results.html"
+				sh "nikto -ask no -config ~/nikto-config.txt -Format html -h http://"${testenv}+":10007/gossip -output "+ $WORKSPACE/$BUILD_TAG/DAST_results.html"
 				//sh "python3 ~/authDAST.py $seleniumIp ${testenv} $WORKSPACE/$BUILD_TAG/DAST_results.html"
 				//sh "perl /var/jenkins_home/nikto-master/program/nikto.pl -h http://${testenv}:10007/login"
 			}  			
