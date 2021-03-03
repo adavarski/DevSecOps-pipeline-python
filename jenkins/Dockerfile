@@ -27,6 +27,7 @@ RUN add-apt-repository 'deb http://archive.ubuntu.com/ubuntu bionic multiverse'
 RUN add-apt-repository 'deb http://archive.ubuntu.com/ubuntu bionic-security multiverse'
 RUN add-apt-repository 'deb http://archive.ubuntu.com/ubuntu bionic-updates multiverse'
 
+#Python3 packages
 ENV PYTHON_VERSION 3.5
 
 RUN apt-get update \
