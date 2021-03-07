@@ -6,7 +6,7 @@ A Jenkins end-to-end DevSecOps pipeline for Python web application.
 
 Jenkins instance/environment hosted on AWS EC2 (Ubuntu 18.04) or local environment (on your laptop/workstation/on-prem ubuntu server).
 
-Features:
+Features summary:
 
 - Select appropriate security tools and sample python project
 - Set up Jenkins server using docker (Dockerfile) and pipeline as code (Jenkinsfile) to run the checks
